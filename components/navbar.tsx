@@ -53,7 +53,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logo.png"
+              src="/Logo.png"
               alt="IntelliVoice Logo"
               width={40}
               height={40}
