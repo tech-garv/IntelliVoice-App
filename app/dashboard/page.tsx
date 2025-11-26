@@ -23,8 +23,11 @@ useEffect(() => {
     }
   }
 }, [user, loading]);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 71886f6d97a9fbab349323f8a6eca54aedadf374
 
   if (loading) {
     return (
