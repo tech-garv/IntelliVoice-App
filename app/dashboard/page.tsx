@@ -10,17 +10,19 @@ export default function DashboardPage() {
   const { user, logout, loading } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!loading && !user) {
-      const token = localStorage.getItem("token");
+useEffect(() => {
+  if (!loading) {
+    const token = localStorage.getItem("token");
 
-      // Allow guest token
-      if (token === "guest_token_123") return;
+    // ⭐ Allow Guest Login
+    if (token === "guest_token_123") return;
 
+    // ⭐ Normal Redirect
+    if (!user) {
       router.push("/signin");
     }
-  }, [user, loading]);
-
+  }
+}, [user, loading]);
 
   if (loading) {
     return (
@@ -38,7 +40,7 @@ export default function DashboardPage() {
         {/* 🔓 Top Section with Logout */}
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">
-            👋 Welcome, <span className="text-indigo-600">{user.name}</span>
+            👋 Welcome, <span className="text-indigo-600">{user?.name||"Guest User"}</span>
           </h1>
 
         </div>
