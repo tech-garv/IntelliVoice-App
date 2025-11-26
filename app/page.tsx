@@ -79,6 +79,15 @@ export default function Home() {
           >
             <FaRocket /> Get Started / Sign Up
           </motion.button>
+          {/* ⭐ NEW — Guest Mode */}
+          <motion.button
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => router.push("/guest")}
+            className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 text-lg py-3 rounded-xl font-semibold shadow flex items-center justify-center gap-2 transition-all"
+          >
+            👤 Continue as Guest
+          </motion.button>
         </div>
       </motion.div>
     </main>

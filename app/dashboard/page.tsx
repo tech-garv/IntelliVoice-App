@@ -12,9 +12,15 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!loading && !user) {
-      router.push('/signin');
+      const token = localStorage.getItem("token");
+
+      // Allow guest token
+      if (token === "guest_token_123") return;
+
+      router.push("/signin");
     }
   }, [user, loading]);
+
 
   if (loading) {
     return (
@@ -34,7 +40,7 @@ export default function DashboardPage() {
           <h1 className="text-2xl font-bold">
             👋 Welcome, <span className="text-indigo-600">{user.name}</span>
           </h1>
-          
+
         </div>
 
         {/* Mobile Warning */}
